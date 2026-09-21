@@ -70,6 +70,16 @@ function updateAIs() {
     AIs.forEach(ai => {
         ai.function(ai);
     });
+    var totalCookies = 0
+    AIs.forEach(ai => {
+        totalCookies += ai.totalCookies;
+    });
+    for(let i = 0; i < AIs.length; i++){
+        let ai = AIs[i];
+        let percentCookies = ai.totalCookies / totalCookies;
+        let progressBar = document.getElementById("progress-bar" + i);
+        progressBar.style.width = percentCookies * 100 + "%";
+    }
 }
 
 function updatePasiveClick() {

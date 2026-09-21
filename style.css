@@ -26,3 +26,20 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+#progress-container {
+    position: absolute;
+    translate: -50% -50%;
+    left: 50%;
+    top: 50%;
+    width: 10vw;
+    border: 1px solid black;
+}
+
+.progress-bar {
+    width: 5vw;
+    height: 2vh;
+    margin: 2px;
+    background-color: green;
+    border: 1px solid black;
+}
