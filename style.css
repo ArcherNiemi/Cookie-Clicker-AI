@@ -32,14 +32,15 @@ button:hover {
     translate: -50% -50%;
     left: 50%;
     top: 50%;
-    width: 10vw;
+    width: 50vw;
     border: 1px solid black;
 }
 
 .progress-bar {
     width: 5vw;
-    height: 2vh;
+    height: 5vh;
     margin: 2px;
     background-color: green;
     border: 1px solid black;
+    font-size: 30px;
 }

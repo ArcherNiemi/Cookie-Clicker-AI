@@ -27,7 +27,7 @@ class AI {
         if (this.cookies >= this.passiveClickPrice) {
             this.passiveClick++;
             this.cookies -= this.passiveClickPrice;
-            this.passiveClickPrice += 5;
+            this.passiveClickPrice += 12;
         }
     }
 
@@ -61,9 +61,24 @@ function tomsFunction(tom) {
     }
 }
 
+function johnsFunction(john) {
+    console.log("John has", john.cookies, "cookies and ", john.totalCookies, " total cookies");
+
+    john.cookies += john.passiveClick;
+
+    if(john.cookies >= john.clickPowerPrice){
+        john.buyClickPower();
+    } else if(john.cookies >= john.passiveClickPrice){
+        john.buyPassiveClick();
+    }else {
+        john.click();
+    }
+}
+
 const AIs = [
     new AI("Bob", bobsFunction),
-    new AI("Tom", tomsFunction)
+    new AI("Tom", tomsFunction),
+    new AI("John", johnsFunction)
 ];
 
 function updateAIs() {
@@ -79,6 +94,7 @@ function updateAIs() {
         let percentCookies = ai.totalCookies / totalCookies;
         let progressBar = document.getElementById("progress-bar" + i);
         progressBar.style.width = percentCookies * 100 + "%";
+        progressBar.textContent = ai.totalCookies;
     }
 }
 
